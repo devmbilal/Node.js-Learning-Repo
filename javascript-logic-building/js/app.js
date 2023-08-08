@@ -16,7 +16,6 @@ function arrangeEmpDetails1(data)
 {
         // write your code here
 }
-
 // let sortedemp = arrangeEmpDetails(empDetails)
 // console.log(sortedemp);
 
