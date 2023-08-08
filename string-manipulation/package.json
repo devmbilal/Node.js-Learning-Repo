@@ -1,7 +1,7 @@
 {
   "name": "sprint3-practice1-code",
   "version": "1.0.0",
-  "description": "",
+  "description": "In previous Sprints we have used functions to write the logic, now let's split functions in modular code so that it can be reused across the application​",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.4",
-    "mocha": "^9.1.3"
+    "mocha": "^9.1.3",
+    "string-manipulation": "^1.3.0"
   }
 }
