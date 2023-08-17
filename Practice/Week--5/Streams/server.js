@@ -1,12 +1,19 @@
-const { log } = require('console');
 const http = require('http');
+const fs = require('fs');
 
-const server = http.createServer((req, res) => {
+const server = http.createServer((req,res) => {
  
     if(req.url!= '/'){
       return res.end('404 not found');
     }
-    console.log('request coming',req.url); 
+     
+    // Downloading big files in bad way
+
+    const file = fs.readFileSync('sample.txt'); 
+
+    // Downloading big files in Good way
+
+    return res.end(file);
 
 });
 
