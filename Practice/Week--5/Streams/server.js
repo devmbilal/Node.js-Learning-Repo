@@ -9,11 +9,17 @@ const server = http.createServer((req,res) => {
      
     // Downloading big files in bad way
 
-    const file = fs.readFileSync('sample.txt'); 
+    //const file = fs.readFileSync('sample.txt'); 
+    //return res.end(file);
 
     // Downloading big files in Good way
+ 
+    const readableStream = fs.createReadStream('sample.txt');
+    
+    // readable stream pipe to writeable straeam
 
-    return res.end(file);
+    readableStream.pipe(res);
+   
 
 });
 
