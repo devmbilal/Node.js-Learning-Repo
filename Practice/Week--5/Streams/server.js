@@ -34,31 +34,45 @@ const server = http.createServer((req,res) => {
   
   // String-Processing  
    
-    // const sampleFileStream = fs.createReadStream('sample.txt');
-    // const outputWriteableStream = fs.createWriteStream('output.txt');
+    const sampleFileStream = fs.createReadStream('sample.txt');
+    const outputWritableStream = fs.createWriteStream('output.txt');
 
     // sampleFileStream.on('data', (chunk) => { 
     // console.log('Data Received',chunk.toString());
 
     // const finalString = chunk.toString().replace(/ipsum/gi,'cool').toUpperCase();
 
-    // outputWriteableStream.write(finalString); });
+    // outputWritableStream.write(finalString); });
 
   // String-Processing using Transform
   
-      sampleFileStream
-     .pipe(replaceWordProcessing)
-    .on('error', (err) => {
-        console.log(err)
-    })
-    .pipe(uppercaseWordProcessing)
-    .on('error', (err) => {
-        console.log(err)
-    })
-    .pipe(outputWritableStream)
-    .on('error', (err) => {
-        console.log(err)
-    });
+    //   sampleFileStream
+    //  .pipe(replaceWordProcessing)
+    // .on('error', (err) => {
+    //     console.log(err)
+    // })
+    // .pipe(uppercaseWordProcessing)
+    // .on('error', (err) => {
+    //     console.log(err)
+    // })
+    // .pipe(outputWritableStream)
+    // .on('error', (err) => {
+    //     console.log(err)
+    // });
+  
+  // Transform using pipeline
+   pipeline(sampleFileStream,
+        replaceWordProcessing,
+        uppercaseWordProcessing,
+        outputWritableStream,
+        (err) => {
+            if (err) {
+                console.log('Error handling here...', err);
+            }
+        }
+        );
+
+
 });
 
      const PORT = process.env.PORT || 5700;
