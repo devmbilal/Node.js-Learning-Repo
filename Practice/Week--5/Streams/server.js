@@ -29,11 +29,20 @@ const server = http.createServer((req,res) => {
     // });
     // res.end();
   
-  
-    
+  // String-Processing  
    
+    const sampleFileStream = fs.createReadStream('sample.txt');
+    const outputWriteableStream = fs.createWriteStream('output.txt');
 
+    sampleFileStream.on('data', (chunk) => { 
+    console.log('Data Received',chunk.toString());
+
+    const finalString = chunk.toString().replace(/ipsum/gi,'cool').toUpperCase();
+
+    outputWriteableStream.write(finalString);
+
+  });
 });
 
-const PORT = process.env.PORT || 5700;
-server.listen(PORT, () =>console.log(`Server is running on port ${PORT}`));  
+     const PORT = process.env.PORT || 5700;
+     server.listen(PORT, () =>console.log(`Server is running on port ${PORT}`));  
