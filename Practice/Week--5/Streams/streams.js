@@ -1,13 +1,28 @@
 const { log } = require('console');
-const {Readable} = require('stream');
+const {Readable,Writable} = require('stream');
 
+// Readable Stream
 const readableStream = new Readable({
     highWaterMark:2,
     read(){}
 });
- 
+
 readableStream.on('data', (chunk) => {
   console.log('Data Coming : ',chunk.toString());
+  writeableStream.write(chunk); 
 });
 
-console.log(readableStream.push('Hello from Bilal'))  ;    // push data to readable streamcon
+// Writeableable Stream
+
+const writeableStream = new Writable({
+    write :function(s){
+        console.log('writting : ',s.toString());
+    },
+     
+})
+
+console.log(readableStream.push('Hello from Bilal'))  ; 
+
+
+
+ 
