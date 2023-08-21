@@ -13,6 +13,12 @@ app.get('/api/courses/:id', (req, res) =>{
     res.send(req.params.id);
 });
 
+app.get('/api/courses/:id',(req, res) =>{
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    if(!course) res.status(404).send('The course with the given ID was not found'); 
+    res.send(course);
+});
+
 const port = process.env.PORT || 3000;
 app.listen(3000, () => {
     console.log('Example app listening on port 3000!');
