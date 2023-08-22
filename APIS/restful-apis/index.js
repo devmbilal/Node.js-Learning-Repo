@@ -10,17 +10,10 @@ const courses = [
     {id: 3, name: 'course3'}
 ];
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-}); 
 
 app.get('/api/courses', (req, res) => {
-    res.send([1, 2, 3]);    
+    res.send(courses);    
 }); 
-
-app.get('/api/courses/:id', (req, res) =>{
-    res.send(req.params.id);
-});
 
 app.get('/api/courses/:id',(req, res) =>{
     const course = courses.find(c => c.id === parseInt(req.params.id));
@@ -61,6 +54,16 @@ app.put('/api/courses/:id', (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log('App listening on port 3000!');
+});
+
+app.delete('/api/courses/:id', (req, res) => {  
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    if(!course) res.status(404).send('The course with the given ID was not found');
+
+    const index = courses.indexOf(course);
+    courses.splice(index, 1);
+
+    res.send(course);
 });
 
 
