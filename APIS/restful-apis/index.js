@@ -29,10 +29,10 @@ app.get('/api/courses/:id',(req, res) =>{
 });
 
 app.post('/api/courses', (req, res) => {   
-    const scheam = {  
+    const schema = Joi.object({  
         name: Joi.string().min(3).required()    
-    };
-    const result = Joi.validate(req.body, scheam);      
+    });
+    const result = schema.validate(req.body);      
 
     if(result.error){
         res.status(400).send(result.error.details[0].message);
