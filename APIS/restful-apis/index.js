@@ -47,14 +47,29 @@ app.post('/api/courses', (req, res) => {
 
 });
 
-const port = process.env.PORT || 3000;
-app.listen(3000, () => {
+app.put('/api/courses/:id', (req, res) => {
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    if(!course) res.status(404).send('The course with the given ID was not found');
+
+    const { error } = validateCourse(req.body); //result.error          
+    if(error){      
+        res.status(400).send(error.details[0].message);
+        return;
+    }
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
     console.log('App listening on port 3000!');
 });
+
 
 function validateCourse(course){    
     const schema = Joi.object({  
         name: Joi.string().min(3).required()    
     });
-    return schema.validate(course);    
+    return schema.validate(course);
 }
+
+
+
