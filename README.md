@@ -7,7 +7,7 @@ Welcome to the Node.js Learning Repository! This repository is dedicated to help
 In this repository, you'll find a collection of resources, code samples, and explanations that cover various aspects of Node.js. Whether you're a beginner just getting started or an experienced developer looking to enhance your Node.js skills, you'll find valuable content to aid your learning journey.
 
 ## Table of Contents
-- [Basic Syntax](#[basic-syntax](https://github.com/mbilalshakeel/Node-JS/tree/main/Basic%20Syntax))
+- [Basic Syntax](#https://github.com/mbilalshakeel/Node-JS/tree/main/Basic%20Syntax)
 - [Asynchronous Programming](#asynchronous-programming)
 - [Modules and Packages](#modules-and-packages)
 - [RESTful APIs](#restful-apis)
