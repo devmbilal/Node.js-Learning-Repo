@@ -2,20 +2,15 @@
 
 Welcome to the Node.js Learning Repository! This repository is dedicated to helping you learn and understand Node.js, a powerful runtime that allows you to build scalable and efficient server-side applications using JavaScript.
 
-![Node.js Logo](nodejs-logo.png) <!-- Replace with an actual image file -->
+
 
 In this repository, you'll find a collection of resources, code samples, and explanations that cover various aspects of Node.js. Whether you're a beginner just getting started or an experienced developer looking to enhance your Node.js skills, you'll find valuable content to aid your learning journey.
 
 ## Table of Contents
-
-- [Introduction to Node.js](#introduction-to-nodejs)
-- [Getting Started](#getting-started)
-- [Basic Syntax](#basic-syntax)
+- [Basic Syntax](#[basic-syntax](https://github.com/mbilalshakeel/Node-JS/tree/main/Basic%20Syntax))
 - [Asynchronous Programming](#asynchronous-programming)
 - [Modules and Packages](#modules-and-packages)
 - [RESTful APIs](#restful-apis)
-- [Advanced Topics](#advanced-topics)
-- [Contributing](#contributing)
 - [Resources](#resources)
 - [License](#license)
 
@@ -42,10 +37,6 @@ In this section, discover how to modularize your Node.js code using modules. Lea
 ## RESTful APIs
 
 Building RESTful APIs is a common use case for Node.js. Learn how to create a basic RESTful API using popular frameworks like Express.js. Understand routing, handling HTTP requests, and sending responses to build robust APIs.
-
-## Advanced Topics
-
-Ready to take your Node.js skills to the next level? Explore advanced topics such as authentication, database integration, security best practices, performance optimization, and real-time applications using technologies like WebSocket.
 
 ## Contributing
 
