@@ -12,6 +12,7 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "config": "^3.3.9",
+    "debug": "^4.3.4",
     "express": "^4.18.2",
     "helmet": "^7.0.0",
     "joi": "^17.9.2",
