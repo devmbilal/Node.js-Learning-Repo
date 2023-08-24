@@ -9,6 +9,9 @@ const app = express();
 const startupDebugger = require('debug')('app:startup');
 const dbDebugger = require('debug')('app:db');
 
+//Templating Engine
+app.set('view engine', 'pug'); 
+app.set('views', './views'); //default
 
 // Middle Ware
 app.use(express.json());
@@ -38,7 +41,8 @@ const courses = [
 
 
 app.get('/api/courses', (req, res) => {
-    res.send(courses);    
+    res.render('index', {title: 'My Express App', message: 'Hello'});  // For Sending HTML Responses
+   // res.send(courses);    // For Sending JSON Responses
 }); 
 
 app.get('/api/courses/:id',(req, res) =>{
