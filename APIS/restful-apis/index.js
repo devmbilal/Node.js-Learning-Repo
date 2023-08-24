@@ -1,3 +1,4 @@
+const config = require('config');
 const express = require('express');
 const Joi = require('joi');
 const logger = require('./logger');
@@ -12,6 +13,12 @@ app.use(express.static('public'));
 app.use(logger);
 app.use(helmet());
 
+
+// Configuration
+console.log('Application Name: ' + config.get('name'));
+console.log('Mail Server: ' + config.get('mail.host'));
+console.log('Mail Password: ' + config.get('mail.password'));
+    
 if(app.get('env') === 'development'){
     app.use(morgan('tiny'));
     console.log('Morgan enabled...');
