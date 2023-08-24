@@ -1,3 +1,4 @@
+//Modules
 const config = require('config');
 const express = require('express');
 const Joi = require('joi');
@@ -6,23 +7,23 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const app = express();
 
-
+// Middle Ware
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
 app.use(logger);
-app.use(helmet());
-
-
-// Configuration
-console.log('Application Name: ' + config.get('name'));
-console.log('Mail Server: ' + config.get('mail.host'));
-console.log('Mail Password: ' + config.get('mail.password'));
-
+app.use(helmet()); 
 if(app.get('env') === 'development'){
     app.use(morgan('tiny'));
     console.log('Morgan enabled...');
 }
+
+// Configuration
+console.log('Application Name: ' + config.get('name'));
+console.log('Mail Server: ' + config.get('mail.host'));
+//console.log('Mail Password: ' + config.get('mail.password'));
+
+
 
 
 const courses = [
