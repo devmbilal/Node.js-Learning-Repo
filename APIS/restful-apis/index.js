@@ -6,6 +6,9 @@ const logger = require('./logger');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const app = express();
+const startupDebugger = require('debug')('app:startup');
+const dbDebugger = require('debug')('app:db');
+
 
 // Middle Ware
 app.use(express.json());
@@ -15,7 +18,7 @@ app.use(logger);
 app.use(helmet()); 
 if(app.get('env') === 'development'){
     app.use(morgan('tiny'));
-    console.log('Morgan enabled...');
+    startupDebugger('Morgan enabled...');
 }
 
 // Configuration
@@ -23,7 +26,8 @@ console.log('Application Name: ' + config.get('name'));
 console.log('Mail Server: ' + config.get('mail.host'));
 //console.log('Mail Password: ' + config.get('mail.password'));
 
-
+// Db work...
+dbDebugger('Connected to the database...');
 
 
 const courses = [
