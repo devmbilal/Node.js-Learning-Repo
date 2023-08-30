@@ -17,7 +17,7 @@ async function createCourse(){
     const course = new Course({
     name:'Node.js Course',
     author:'Muhammad Bilal',
-    tags:['node','backend'],
+    tags:['angular','frontend'],
     isPublished:true
 })
    const result = await course.save();
@@ -25,3 +25,5 @@ async function createCourse(){
 }
 
 createCourse();
+
+
