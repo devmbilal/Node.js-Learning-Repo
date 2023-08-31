@@ -41,8 +41,17 @@ async function getCourses(){
     //.find({author:'Muhammad Bilal',isPublished:true})
     // .find({price:{$gte:10,$lte:20}})
     //.find({price:{$in:[10,15,20]}})
-    .find()
-    .or([{author:'Muhammad Bilal'},{isPublished:true}])
+    //Logical Operators
+    //.find()
+    //.or([{author:'Muhammad Bilal'},{isPublished:true}])
+    // Regular Expression
+    //  Starts with Muhammad
+    .find({author:/^Muhammad/}) 
+    // Ends with Bilal
+    .find({author:/Bilal$/i})
+    // Contains Muhammad
+    .find({author:/.*Muhammad.*/i})
+    
     .limit(10)
     .sort({name:1})
     .select({name:1,tags:1});
