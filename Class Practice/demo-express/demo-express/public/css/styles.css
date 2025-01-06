@@ -1,0 +1,57 @@
+body {
+    font-family: 'Arial', sans-serif;  /* Sets a clean, sans-serif font */
+    background-color: #f4f4f4;         /* Light grey background color */
+    color: #333333;                    /* Dark grey text color for good readability */
+    margin: 0;                          /* Removes default margin */
+    padding: 0;                         /* Removes default padding */
+    line-height: 1.6;                   /* Increases line height for better readability */
+    height: 100vh;                      /* Ensures the body takes full viewport height */
+    box-sizing: border-box;             /* Includes padding and border in element's total width/height */
+    display: flex;                      /* Enables flexbox for easy layout */
+    flex-direction: column;             /* Stacks content vertically */
+    justify-content: flex-start;        /* Aligns content to the top */
+    text-align: left;                   /* Aligns text to the left by default */
+}
+
+div.demo {
+    width: 80%;                           /* Sets the width to 80% of its parent container */
+    max-width: 1200px;                     /* Restricts the maximum width to 1200px */
+    margin: 20px auto;                     /* Centers the div horizontally and adds vertical margin */
+    padding: 30px;                         /* Adds padding inside the div */
+    background-color: #ffffff;             /* Sets the background color to white */
+    border: 2px solid #ccc;                /* Adds a light gray border around the div */
+    border-radius: 10px;                   /* Rounds the corners of the div */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow effect */
+    display: flex;                         /* Enables flexbox layout */
+    flex-direction: column;                /* Stacks child elements vertically */
+    align-items: center;                   /* Centers child elements horizontally */
+    text-align: center;                    /* Centers the text inside the div */
+    transition: all 0.3s ease;             /* Smooth transition for hover effects */
+}
+
+div.demo:hover {
+    background-color: #f0f0f0;             /* Changes the background color on hover */
+    transform: scale(1.05);                 /* Slightly scales the div on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhances the shadow effect on hover */
+}
+
+h1 {
+    font-family: 'Helvetica Neue', sans-serif;  /* Sets a modern, clean sans-serif font */
+    font-size: 2rem;                           /* Sets the font size to 2 rem for readability */
+    font-weight: 600;                          /* Slightly bold text */
+    color: #333333;                           /* Dark grey text color for good contrast */
+    margin-top: 20px;                         /* Adds space above the h2 element */
+    margin-bottom: 10px;                      /* Adds space below the h2 element */
+    text-align: center;                       /* Centers the h2 text horizontally */
+    letter-spacing: 1px;                      /* Adds a small amount of letter spacing for clarity */
+    text-transform: uppercase;                /* Transforms the text to uppercase for emphasis */
+    line-height: 1.4;                         /* Increases line height for better readability */
+    border-bottom: 2px solid #0077cc;         /* Adds a solid border under the h2 element */
+    padding-bottom: 10px;                     /* Adds padding below the text to space out from the border */
+    box-sizing: border-box;                   /* Ensures padding is included in element’s width/height */
+}
+
+h1:hover {
+    color: #0077cc;                           /* Changes text color on hover to match the border color */
+    text-decoration: underline;               /* Underlines the text on hover for an interactive effect */
+}
